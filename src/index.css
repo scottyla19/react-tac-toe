@@ -12,8 +12,11 @@ body {
 ol, ul {
   padding-left: 30px;
 }
+header img {
+  max-width: 1.5em;
+  margin: .25em;
+}
 header {
-  font-size: 1.5em;
   background-color: #222;
   color: #00d8ff;
   height: 2em;
