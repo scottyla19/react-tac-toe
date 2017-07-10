@@ -1,15 +1,12 @@
 body {
-  font-family: proxima-nova,
-    "Helvetica Neue",
-    Helvetica,
-    Roboto,
-    Arial,
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Roboto, Arial,
     sans-serif;
   margin: 0;
   padding: 0;
 }
 
-ol, ul {
+ol,
+ul {
   padding-left: 30px;
 }
 header img {
@@ -36,9 +33,22 @@ header {
   grid-area: root;
   justify-self: center;
 }
+
+.formContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.formChild {
+  min-width: 225px;
+  max-width: 33.333333%;
+}
+.formFullChild {
+  width: 100%;
+}
 .board-row {
   display: flex;
-  flex: row nowrap;
+  flex-flow: row nowrap;
 }
 
 .status .game-board {
