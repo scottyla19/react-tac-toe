@@ -72,3 +72,23 @@ return (
 }, this)}
 ```
 Notice the middle return was giving an error when wrapping it in `{}` because it is only one line.
+
+# 7/11/17
+
+## CSS
+
+Setting up the board provided some challenges including
+- `relative` positioned the center (parent) node and made the buttons (children) `absolute`. This allowed me to position the buttons with respect the the center node.
+```css
+.recallCenter {
+  position: relative;
+  ...
+}
+
+.recallBtn {
+  position: absolute;
+  ...
+}
+```
+- used `vmin` units for sizes of buttons and center node which made the board more responsive. It now fits well on both mobile and desktop.
+- border-box: allows for the border to be within the size of the element. Without it my sectors were `4ovmin + 10px` instead of just `40vmin`.

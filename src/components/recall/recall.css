@@ -1,0 +1,109 @@
+.boardWrapper {
+  position: relative;
+}
+.recallCenter {
+  position: relative;
+  margin: 30vmin 0 0 0;
+  border: solid darkslategray 10px;
+  width: 40vmin;
+  height: 40vmin;
+  background-color: #ccc;
+  border-radius: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  padding-left: 1vmin;
+  padding-right: 1vmin;
+  align-items: center;
+  justify-content: space-between;
+}
+.scoreBoard {
+  overflow: hidden;
+  width: 12vmin;
+  height: 8vmin;
+  font-size: 2em;
+  text-align: center;
+  border-radius: 10px;
+  background-color: black;
+  color: tomato;
+}
+.centerBtns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.startStrict {
+  width: 5vmin;
+  height: 5vmin;
+  align-self: center;
+  border-radius: 100%;
+  border: solid darkgray 3px;
+  box-sizing: border-box;
+}
+.startButton {
+  margin-top: 2vmin;
+  background-color: red;
+}
+
+.strictButton {
+  background-color: yellow;
+}
+.led {
+  width: 2vmin;
+  height: 2vmin;
+  align-self: center;
+  border-radius: 100%;
+  border: solid darkgray 2px;
+  box-sizing: border-box;
+}
+.recallBtn {
+  position: absolute;
+  height: 50vmin;
+  width: 50vmin;
+  box-sizing: border-box;
+}
+
+.greenRecallBtn {
+  border-radius: 100% 0 0 0;
+  top: -30vmin;
+  left: -30vmin;
+  background-color: green;
+  border-top: solid darkslategray 10px;
+  border-right: solid darkslategray 5px;
+  border-bottom: solid darkslategray 5px;
+  border-left: solid darkslategray 10px;
+}
+
+.redRecallBtn {
+  border-radius: 0 100% 0 0;
+  top: -30vmin;
+  left: 20vmin;
+  background-color: red;
+  border-top: solid darkslategray 10px;
+  border-right: solid darkslategray 10px;
+  border-bottom: solid darkslategray 5px;
+  border-left: solid darkslategray 5px;
+}
+
+.yellowRecallBtn {
+  border-radius: 0 0 0 100%;
+  top: 20vmin;
+  left: -30vmin;
+  background-color: yellow;
+  border-top: solid darkslategray 5px;
+  border-right: solid darkslategray 5px;
+  border-bottom: solid darkslategray 10px;
+  border-left: solid darkslategray 10px;
+}
+
+.blueRecallBtn {
+  border-radius: 0 0 100% 0;
+  top: 20vmin;
+  left: 20vmin;
+  background-color: blue;
+  border-top: solid darkslategray 5px;
+  border-right: solid darkslategray 10px;
+  border-bottom: solid darkslategray 10px;
+  border-left: solid darkslategray 5px;
+}

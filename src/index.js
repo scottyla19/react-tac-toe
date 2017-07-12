@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import StartMenu from "./components/tic-tac-toe/StartMenu";
-import RecallGame from "./components/recall/RecallPlay";
+import RecallGame from "./components/recall/RecallGame";
 
 import injectTapEventPlugin from "react-tap-event-plugin";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
