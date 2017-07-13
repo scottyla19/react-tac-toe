@@ -4,20 +4,6 @@ import Snackbar from "material-ui/Snackbar";
 
 import "./recall.css";
 
-const defaultState = {
-  correctMoves: [],
-  playerMoves: [],
-  correctSequences: 0,
-  seqIndex: 0,
-  isPlayerRecall: false,
-  isStrictMode: false,
-  greenSelected: "inactive",
-  blueSelected: "inactive",
-  redSelected: "inactive",
-  yellowSelected: "inactive",
-  open: false,
-  message: ""
-};
 export default class RecallGame extends React.Component {
   constructor() {
     super();
@@ -123,13 +109,16 @@ export default class RecallGame extends React.Component {
             isPlayerRecall: false,
             playerMoves: [],
             seqIndex: 0,
-            correctSequences: this.state.correctSequences + 1
+            correctSequences: this.state.correctSequences + 1,
+            message: "Correct!",
+            open: true,
+            snackbarTimeout:1000
           });
           this.getNextMove();
           let game = this;
           setTimeout(function() {
             game.showSequence();
-          }, 1000);
+          }, 1500);
         }
       } else {
         if (this.state.isStrictMode) {
@@ -144,14 +133,25 @@ export default class RecallGame extends React.Component {
             greenSelected: "inactive",
             blueSelected: "inactive",
             redSelected: "inactive",
-            yellowSelected: "inactive"
+            yellowSelected: "inactive",
+             message: "Strict Mode Incorrect! Press start to begin a new game.",
+            open: true,
+            snackbarTimeout:3000
           });
           return;
         }
         let game = this;
+         this.setState({
+            isPlayerRecall: false,
+            playerMoves: [],
+            seqIndex: 0,
+            message: "Incorrect! Try again.",
+            open: true,
+            snackbarTimeout:1000
+          });
         setTimeout(function() {
           game.showSequence();
-        }, 1000);
+        }, 2000);
       }
     }
   }
@@ -218,7 +218,12 @@ export default class RecallGame extends React.Component {
             className={"recallBtn yellowRecallBtn " + this.state.yellowSelected}
             onClick={this.handleClick}
           />
-          <div className="recallCenter" onClick={this.handleClick}>
+          <div className="recallCenter" >
+            <div className="title">
+              Recall
+            </div>
+            <div className="centerMenu">
+            
             <div className="scoreBoard">
               {this.state.correctSequences}
             </div>
@@ -239,11 +244,12 @@ export default class RecallGame extends React.Component {
               />
               Strict
             </div>
+            </div>
           </div>
           <Snackbar
             open={this.state.open}
             message={this.state.message}
-            autoHideDuration={3000}
+            autoHideDuration={this.state.snackbarTimeout}
             onRequestClose={this.handleRequestClose}
           />
         </div>
